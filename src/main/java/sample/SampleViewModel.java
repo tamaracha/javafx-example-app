@@ -9,7 +9,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class SampleViewModel implements ViewModel {
-    private final StringProperty halloLabelText = new SimpleStringProperty("hallo1");
+    private final String halloLabelInitialText = "hallo1";
+
+    private final StringProperty halloLabelText = new SimpleStringProperty(halloLabelInitialText);
     private final Command buhCommand;
 
     public SampleViewModel() {
@@ -18,7 +20,7 @@ public class SampleViewModel implements ViewModel {
             protected void action() {
                 halloLabelText.set("hallo buh");
             }
-        });
+        }, halloLabelText.isEqualTo(halloLabelInitialText));
     }
 
     public ReadOnlyStringProperty halloLabelTextProperty() {

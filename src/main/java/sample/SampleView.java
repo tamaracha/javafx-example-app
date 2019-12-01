@@ -23,7 +23,7 @@ public class SampleView implements FxmlView<SampleViewModel>, Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         halloLabel.textProperty().bind(viewModel.halloLabelTextProperty());
-        halloLabel.disableProperty().bind(viewModel.getBuhCommand().notExecutableProperty());
+        buhButton.disableProperty().bind(viewModel.getBuhCommand().notExecutableProperty());
     }
 
     @FXML
