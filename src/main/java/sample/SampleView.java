@@ -3,14 +3,10 @@ package sample;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class SampleView implements FxmlView<SampleViewModel>, Initializable {
+public class SampleView implements FxmlView<SampleViewModel> {
     @FXML
     public Label halloLabel;
 
@@ -20,8 +16,7 @@ public class SampleView implements FxmlView<SampleViewModel>, Initializable {
     @InjectViewModel
     private SampleViewModel viewModel;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize() {
         halloLabel.textProperty().bind(viewModel.halloLabelTextProperty());
         buhButton.disableProperty().bind(viewModel.getBuhCommand().notExecutableProperty());
     }
