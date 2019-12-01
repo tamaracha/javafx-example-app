@@ -10,8 +10,8 @@
 <GridPane fx:controller="sample.SampleView"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" minWidth="300" minHeight="200">
     <VBox>
-        <Label>Hallo</Label>
-        <Button>Buh</Button>
+        <Label fx:id="halloLabel" />
+        <Button fx:id="buhButton" onAction="#buhButtonAction">Buh</Button>
         <ComboBox>
             <items>
                 <FXCollections fx:factory="observableArrayList">
