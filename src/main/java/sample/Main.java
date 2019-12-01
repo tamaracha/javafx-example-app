@@ -26,7 +26,7 @@ public class Main extends Application {
         var items = Arrays.asList("Schnipp", "Schnapp", "Schnepp");
         ComboBox<String> c = new ComboBox<>(FXCollections.observableList(items));
         TextArea t2 = new TextArea("abcdef");
-        t2.setFont(Font.font ("Verdana", 20));
+        t2.setFont(Font.font("Verdana", 20));
         c.selectionModelProperty().get().select(0);
         Scene scene = new Scene(new VBox(l, b, t, c, t2), 640, 480);
         stage.setScene(scene);
