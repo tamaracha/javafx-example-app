@@ -17,12 +17,12 @@ public class SampleView : FxmlView<SampleViewModel> {
     private lateinit var viewModel: SampleViewModel
 
     public fun initialize() {
-        halloLabel.textProperty().bind(viewModel.halloLabelTextProperty())
-        buhButton.disableProperty().bind(viewModel.getBuhCommand().notExecutableProperty())
+        halloLabel.textProperty().bind(viewModel.halloLabelText)
+        buhButton.disableProperty().bind(viewModel.buhCommand.notExecutableProperty())
     }
 
     @FXML
     public fun buhButtonAction() {
-        viewModel.getBuhCommand().execute()
+        viewModel.buhCommand.execute()
     }
 }
