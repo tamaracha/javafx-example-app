@@ -1,5 +1,7 @@
 plugins {
     java
+    kotlin("jvm").version("1.3.61")
+    kotlin("kapt").version("1.3.61")
     application
     id("org.openjfx.javafxplugin").version("0.0.8")
 }
@@ -25,6 +27,9 @@ repositories {
 }
 
 dependencies {
+    kapt("de.saxsys:mvvmfx:1.8.0")
     testImplementation("junit:junit:4.12")
     implementation("de.saxsys:mvvmfx:1.8.0")
+    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.slf4j:slf4j-simple:1.6.1")
 }
