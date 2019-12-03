@@ -11,11 +11,9 @@ public class SampleViewModel : ViewModel {
     private val halloLabelInitialText = "hallo1"
 
     public val halloLabelText: StringProperty = SimpleStringProperty(halloLabelInitialText)
-    public val buhCommand: Command = DelegateCommand({ BuhAction(halloLabelText) }, halloLabelText.isEqualTo(halloLabelInitialText))
-}
-
-class BuhAction(val property: StringProperty) : Action() {
+    public val buhCommand: Command = DelegateCommand({ object : Action() {
         override fun action() {
-            property.set("hallo buh")
+            halloLabelText.set("hallo buh")
         }
+    } }, halloLabelText.isEqualTo(halloLabelInitialText))
 }
