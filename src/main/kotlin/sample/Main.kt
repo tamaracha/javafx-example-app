@@ -9,7 +9,9 @@ import javafx.stage.Stage
 
 public class Main : Application() {
     public override fun start(stage: Stage) {
-        val viewTuple: ViewTuple<SampleView, SampleViewModel> = FluentViewLoader.fxmlView(SampleView:: class.java).load()
+        val viewTuple: ViewTuple<SampleView, SampleViewModel> = FluentViewLoader.fxmlView(
+            SampleView:: class.java
+        ).load()
         val root: Parent = viewTuple.getView()
         val scene = Scene(root)
         stage.setScene(scene)
