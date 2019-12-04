@@ -1,7 +1,6 @@
-<?xml version="1.0"?>
-<?import javafx.collections.FXCollections?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,18 +9,10 @@
 <?import java.net.URL?>
 <GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="sample.SampleView" alignment="center" hgap="10" vgap="10" minWidth="300" minHeight="200">
   <VBox>
-    <Label fx:id="halloLabel"/>
-    <Button fx:id="buhButton" onAction="#buhButtonAction">Buh</Button>
-    <ComboBox>
-      <items>
-        <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Schnipp"/>
-          <String fx:value="Schnapp"/>
-          <String fx:value="Schnopp"/>
-        </FXCollections>
-      </items>
-    </ComboBox>
-    <TextArea text="abcdef"/>
+    <Label fx:id="schnippLabel"/>
+    <ListView fx:id="schnippSelect"/>
+    <Button fx:id="buhButton" onAction="#buhButtonAction" text="Buh"/>
+    <TextArea fx:id="newBoohooField"/>
   </VBox>
   <stylesheets>
     <URL value="@SampleView.css"/>
