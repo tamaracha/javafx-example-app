@@ -13,7 +13,7 @@ public class SampleViewModel : ViewModel {
     private val initialBoohooText = "Buhu"
     private val initialItems = listOf("Schnipp", "Schnapp", "Schnupp")
 
-    public val selectedBoohoo: StringProperty = SimpleStringProperty()
+    public val selectedBoohoo: StringProperty = SimpleStringProperty("Schnipp")
     public val newBoohooText: StringProperty = SimpleStringProperty(initialBoohooText)
     public val boohooList = SimpleListProperty(FXCollections.observableArrayList(initialItems))
     public val addBoohooCommand: Command = DelegateCommand({ object : Action() {
